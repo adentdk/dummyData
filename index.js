@@ -6,8 +6,10 @@ const { PORT } = process.env;
 const port = PORT || 3000;
 
 const indexRoute =  require("./routes/index");
+const chatRoute = require("./routes/chat");
 
 app.use("/",indexRoute);
+app.use("/chat", chatRoute);
 
 app.use((req, res, next) => {
     next(createError(404));
