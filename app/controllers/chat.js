@@ -11,9 +11,12 @@ exports.index = (req, res) => {
 }
 
 exports.conversations = (req, res) => {
-    res.status(200).json({
+    res.status(200).send({
         "status": 200,
         "message": "OK",
-        "data" : conversations
+        "value" : {
+            "count": conversations.length,
+            "data": conversations
+        }
     });
 } 
